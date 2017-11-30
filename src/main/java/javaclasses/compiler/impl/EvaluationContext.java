@@ -1,6 +1,11 @@
 package javaclasses.compiler.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EvaluationContext implements OutputContext {
+
+    private List<Command> commands = new ArrayList<>();
 
     @Override
     public double getResult() {
@@ -8,7 +13,7 @@ public class EvaluationContext implements OutputContext {
     }
 
     @Override
-    public void pushCommandToContext() {
-
+    public void pushCommandToContext(Command command) {
+        commands.add(command);
     }
 }

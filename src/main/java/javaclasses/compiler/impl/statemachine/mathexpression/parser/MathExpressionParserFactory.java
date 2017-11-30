@@ -1,4 +1,4 @@
-package javaclasses.compiler.impl.statemachine.mathexpression.parcer;
+package javaclasses.compiler.impl.statemachine.mathexpression.parser;
 
 import javaclasses.compiler.impl.ExpressionParser;
 import javaclasses.compiler.impl.statemachine.executionscope.parser.EndOfExecutionScope;

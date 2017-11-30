@@ -1,4 +1,4 @@
-package javaclasses.compiler.impl.statemachine.mathexpression.parcer;
+package javaclasses.compiler.impl.statemachine.mathexpression.parser;
 
 import javaclasses.compiler.CompilationException;
 import javaclasses.compiler.impl.EvaluationContext;
