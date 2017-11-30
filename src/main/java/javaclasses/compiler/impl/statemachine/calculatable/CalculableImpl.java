@@ -40,6 +40,7 @@ public class CalculableImpl extends FiniteStateMachine<
         } catch (CompilationException e) {
             return false;
         }
+        evaluationContext.getResult();
         return true;
     }
 

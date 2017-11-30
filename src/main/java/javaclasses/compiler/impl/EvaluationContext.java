@@ -9,6 +9,10 @@ public class EvaluationContext implements OutputContext {
 
     @Override
     public double getResult() {
+        for (Command command:commands
+             ) {
+            command.execute(this);
+        }
         return 0;
     }
 

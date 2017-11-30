@@ -40,6 +40,7 @@ public class FunctionCall extends FiniteStateMachine<
         } catch (CompilationException e) {
             return false;
         }
+        evaluationContext.getResult();
         return true;
     }
 
