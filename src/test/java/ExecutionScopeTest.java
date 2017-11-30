@@ -6,6 +6,6 @@ public class ExecutionScopeTest {
     ExecutionScope executionScope = new ExecutionScope();
     @Test
     public void testEmptyString() throws CompilationException {
-        executionScope.compile(";");
+        executionScope.compile("");
     }
 }
