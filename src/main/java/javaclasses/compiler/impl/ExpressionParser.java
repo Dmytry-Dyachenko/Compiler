@@ -4,6 +4,6 @@ import javaclasses.compiler.CompilationException;
 
 public interface ExpressionParser {
 
-    boolean parse(ExpressionReader reader, OutputContext context) throws CompilationException;
+    boolean parse(ExpressionReader reader, EvaluationContext context) throws CompilationException;
 
 }

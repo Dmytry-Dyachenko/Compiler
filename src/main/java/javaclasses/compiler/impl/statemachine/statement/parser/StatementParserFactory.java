@@ -1,12 +1,8 @@
 package javaclasses.compiler.impl.statemachine.statement.parser;
 
 import javaclasses.compiler.impl.ExpressionParser;
-import javaclasses.compiler.impl.statemachine.executionscope.ExecutionScopeState;
-import javaclasses.compiler.impl.statemachine.executionscope.parser.EndOfExecutionScope;
-import javaclasses.compiler.impl.statemachine.executionscope.parser.StatementParser;
 import javaclasses.compiler.impl.statemachine.statement.StatementState;
 
-import java.beans.Statement;
 import java.util.HashMap;
 import java.util.Map;
 

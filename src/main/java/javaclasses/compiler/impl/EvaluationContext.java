@@ -1,6 +1,4 @@
-package javaclasses.compiler.impl.context;
-
-import javaclasses.compiler.impl.OutputContext;
+package javaclasses.compiler.impl;
 
 public class EvaluationContext implements OutputContext {
 

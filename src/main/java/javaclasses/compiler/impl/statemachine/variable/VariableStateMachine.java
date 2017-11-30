@@ -1,33 +1,33 @@
-package javaclasses.compiler.impl.statemachine.statement;
+package javaclasses.compiler.impl.statemachine.variable;
 
 import javaclasses.compiler.CompilationException;
 import javaclasses.compiler.FiniteStateMachine;
 import javaclasses.compiler.impl.ExpressionParser;
 import javaclasses.compiler.impl.ExpressionReader;
 import javaclasses.compiler.impl.EvaluationContext;
-import javaclasses.compiler.impl.statemachine.statement.parser.StatementParserFactory;
+import javaclasses.compiler.impl.statemachine.variable.parser.VariableParserFactory;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 import static java.util.EnumSet.of;
-import static javaclasses.compiler.impl.statemachine.statement.StatementState.*;
+import static javaclasses.compiler.impl.statemachine.variable.VariableState.*;
 
-public class StatementImpl extends FiniteStateMachine<
-        EvaluationContext,
-        ExpressionReader,
-        StatementState,
-        CompilationException> {
+public class VariableStateMachine extends FiniteStateMachine<
+            EvaluationContext,
+            ExpressionReader,
+            VariableState,
+            CompilationException> {
 
-    private final StatementParserFactory parserFactory = new StatementParserFactory();
+        private final VariableParserFactory parserFactory = new VariableParserFactory();
 
-    private final Map<StatementState, Set<StatementState>> transitions = new HashMap<StatementState, Set<StatementState>>() {{
-        put(START, of(INIT_VARIABLE, FUNCTION_CALL, LOOP));
-        put(INIT_VARIABLE, of(FINISH));
-        put(FUNCTION_CALL, of(FINISH));
-        put(LOOP, of(FINISH));
-    }};
+        private final Map<VariableState, Set<VariableState>> transitions = new HashMap<VariableState, Set<VariableState>>() {{
+            put(START, of(VARIABLE_NAME));
+            put(VARIABLE_NAME, of(ASSIGN));
+            put(ASSIGN, of(EXPRESSION));
+            put(EXPRESSION, of(FINISH));
+        }};
 
     public boolean execute(ExpressionReader reader)  {
         final EvaluationContext evaluationContext = new EvaluationContext();/*message -> {
@@ -43,23 +43,23 @@ public class StatementImpl extends FiniteStateMachine<
 
     @Override
     protected boolean acceptState(ExpressionReader reader,
-                                  EvaluationContext context, StatementState nextState) throws CompilationException {
+                                  EvaluationContext context, VariableState nextState) throws CompilationException {
         final ExpressionParser parser = parserFactory.getParser(nextState);
         return parser.parse(reader, context);
     }
 
     @Override
-    protected boolean isFinishState(StatementState state) {
+    protected boolean isFinishState(VariableState state) {
         return state == FINISH;
     }
 
     @Override
-    protected Set<StatementState> getPossibleTransitions(StatementState state) {
+    protected Set<VariableState> getPossibleTransitions(VariableState state) {
         return transitions.get(state);
     }
 
     @Override
-    protected void raiseDeadlockError(StatementState executionScopeState, ExpressionReader reader)
+    protected void raiseDeadlockError(VariableState executionScopeState, ExpressionReader reader)
             throws CompilationException {
 
         throw new CompilationException("Incorrect expression format at position " + reader.getParsePosition() + "!");

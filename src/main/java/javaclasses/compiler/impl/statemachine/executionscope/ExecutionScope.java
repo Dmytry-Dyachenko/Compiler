@@ -5,7 +5,7 @@ import javaclasses.compiler.Compiler;
 import javaclasses.compiler.FiniteStateMachine;
 import javaclasses.compiler.impl.ExpressionParser;
 import javaclasses.compiler.impl.ExpressionReader;
-import javaclasses.compiler.impl.context.EvaluationContext;
+import javaclasses.compiler.impl.EvaluationContext;
 import javaclasses.compiler.impl.statemachine.executionscope.parser.ExecutionScopeParserFactory;
 
 import java.util.HashMap;
