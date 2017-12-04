@@ -1,6 +1,7 @@
 package javaclasses.compiler.impl.statemachine.variable.parser;
 
 import javaclasses.compiler.impl.ExpressionParser;
+import javaclasses.compiler.impl.statemachine.executionscope.parser.EndOfExecutionScope;
 import javaclasses.compiler.impl.statemachine.statement.parser.EndOfStatement;
 import javaclasses.compiler.impl.statemachine.variable.VariableState;
 
@@ -15,7 +16,7 @@ public class VariableParserFactory {
         put(VARIABLE_NAME, new VariableNameParser());
         put(ASSIGN, new AssignParser());
         put(EXPRESSION, new MathExpressionParser());
-        put(FINISH, new EndOfStatement());
+        put(FINISH, new EndOfExecutionScope());
     }};
 
     /**

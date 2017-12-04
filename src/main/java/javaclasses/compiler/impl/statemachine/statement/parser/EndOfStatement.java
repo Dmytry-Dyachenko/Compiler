@@ -9,6 +9,10 @@ public class EndOfStatement implements ExpressionParser {
 
     @Override
     public boolean parse(ExpressionReader reader, EvaluationContext context) {
-        return reader.getRemainingExpression().startsWith(STATEMENT_DELIMITER);
+        if (reader.getRemainingExpression().startsWith(STATEMENT_DELIMITER)) {
+            reader.incrementParsePosition(STATEMENT_DELIMITER.length());
+            return true;
+        }
+        return false;
     }
 }
