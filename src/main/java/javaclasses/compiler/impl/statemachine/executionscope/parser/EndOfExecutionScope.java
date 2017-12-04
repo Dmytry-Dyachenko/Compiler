@@ -7,7 +7,7 @@ import javaclasses.compiler.impl.EvaluationContext;
 public class EndOfExecutionScope implements ExpressionParser {
     @Override
     public boolean parse(ExpressionReader reader, EvaluationContext context) {
-        return reader.endOfExpression();
+        return reader.endOfExpression() || reader.getRemainingExpression().startsWith(";");
     }
 }
 

@@ -11,6 +11,6 @@ public class StatementParser implements ExpressionParser {
     @Override
     public boolean parse(ExpressionReader reader, EvaluationContext context) throws CompilationException {
         final StatementImpl statement = new StatementImpl();
-        return statement.execute(reader);
+        return statement.execute(reader, context);
     }
 }

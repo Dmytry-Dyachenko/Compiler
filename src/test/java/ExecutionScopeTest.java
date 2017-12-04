@@ -5,9 +5,9 @@ import org.junit.Test;
 public class ExecutionScopeTest {
     final private ExecutionScope executionScope = new ExecutionScope();
 
-    @Test(expected = CompilationException.class)
+    @Test
     public void testEmptyString() throws CompilationException {
-        executionScope.compile("");
+        executionScope.compile("a=1;b=3");
     }
 
 }

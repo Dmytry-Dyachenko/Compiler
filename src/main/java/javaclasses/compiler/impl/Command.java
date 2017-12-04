@@ -1,5 +1,6 @@
 package javaclasses.compiler.impl;
 
-public interface Command {
-    double execute(EvaluationContext context);
+public abstract class Command {
+
+    public abstract void execute(EvaluationContext context);
 }

@@ -31,7 +31,7 @@ public class CalculableImpl extends FiniteStateMachine<
         put(CLOSE_BRACKET, of(FINISH));
     }};
 
-    public boolean calculate(ExpressionReader reader) {
+    public boolean calculate(ExpressionReader reader, EvaluationContext context) {
         final EvaluationContext evaluationContext = new EvaluationContext();/*message -> {
             throw new CompilationException(message.replace(".", " ") + "at position " + reader.getParsePosition() + "!");
         });*/

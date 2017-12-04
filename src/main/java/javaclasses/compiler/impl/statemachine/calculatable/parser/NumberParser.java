@@ -20,7 +20,7 @@ public class NumberParser implements ExpressionParser {
         if (parsePosition.getErrorIndex() == -1) {
 
             final double doubleValue = number.doubleValue();
-            context.pushCommandToContext(new NumberCommand());
+            context.pushCommandToContext(new NumberCommand(doubleValue));
             reader.incrementParsePosition(parsePosition.getIndex());
 
             return true;

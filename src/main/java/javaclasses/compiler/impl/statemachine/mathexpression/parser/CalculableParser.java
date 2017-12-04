@@ -10,6 +10,6 @@ public class CalculableParser implements ExpressionParser {
     @Override
     public boolean parse(ExpressionReader reader, EvaluationContext context) throws CompilationException {
         final CalculableImpl calculable = new CalculableImpl();
-        return calculable.calculate(reader);
+        return calculable.calculate(reader, context);
     }
 }

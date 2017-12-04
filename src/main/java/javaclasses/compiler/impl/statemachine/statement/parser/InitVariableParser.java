@@ -11,6 +11,6 @@ public class InitVariableParser implements ExpressionParser {
     @Override
     public boolean parse(ExpressionReader reader, EvaluationContext context) throws CompilationException {
         final VariableStateMachine variableStateMachine = new VariableStateMachine();
-        return variableStateMachine.execute(reader);
+        return variableStateMachine.execute(reader, context);
     }
 }

@@ -11,6 +11,6 @@ public class FunctionCallParser implements ExpressionParser {
     @Override
     public boolean parse(ExpressionReader reader, EvaluationContext context) throws CompilationException {
         final FunctionCall functionCall = new FunctionCall();
-        return functionCall.execute(reader);
+        return functionCall.execute(reader, context);
     }
 }

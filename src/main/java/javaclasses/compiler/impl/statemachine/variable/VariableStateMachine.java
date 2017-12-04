@@ -15,22 +15,22 @@ import static java.util.EnumSet.of;
 import static javaclasses.compiler.impl.statemachine.variable.VariableState.*;
 
 public class VariableStateMachine extends FiniteStateMachine<
-            EvaluationContext,
-            ExpressionReader,
-            VariableState,
-            CompilationException> {
+        EvaluationContext,
+        ExpressionReader,
+        VariableState,
+        CompilationException> {
 
-        private final VariableParserFactory parserFactory = new VariableParserFactory();
+    private final VariableParserFactory parserFactory = new VariableParserFactory();
 
-        private final Map<VariableState, Set<VariableState>> transitions = new HashMap<VariableState, Set<VariableState>>() {{
-            put(START, of(VARIABLE_NAME));
-            put(VARIABLE_NAME, of(ASSIGN));
-            put(ASSIGN, of(EXPRESSION));
-            put(EXPRESSION, of(FINISH));
-        }};
+    private final Map<VariableState, Set<VariableState>> transitions = new HashMap<VariableState, Set<VariableState>>() {{
+        put(START, of(VARIABLE_NAME));
+        put(VARIABLE_NAME, of(ASSIGN));
+        put(ASSIGN, of(EXPRESSION));
+        put(EXPRESSION, of(FINISH));
+    }};
 
-    public boolean execute(ExpressionReader reader)  {
-        final EvaluationContext evaluationContext = new EvaluationContext();/*message -> {
+    public boolean execute(ExpressionReader reader, EvaluationContext evaluationContext) {
+        /*message -> {
             throw new CompilationException(message.replace(".", " ") + "at position " + reader.getParsePosition() + "!");
         });*/
         try {

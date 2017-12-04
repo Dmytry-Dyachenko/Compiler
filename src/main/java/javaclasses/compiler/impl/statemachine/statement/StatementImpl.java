@@ -29,8 +29,8 @@ public class StatementImpl extends FiniteStateMachine<
         put(LOOP, of(FINISH));
     }};
 
-    public boolean execute(ExpressionReader reader)  {
-        final EvaluationContext evaluationContext = new EvaluationContext();/*message -> {
+    public boolean execute(ExpressionReader reader, EvaluationContext evaluationContext) {
+        /*message -> {
             throw new CompilationException(message.replace(".", " ") + "at position " + reader.getParsePosition() + "!");
         });*/
         try {

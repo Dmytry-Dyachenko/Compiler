@@ -28,8 +28,8 @@ public class MathExpression extends FiniteStateMachine<
         put(BINARY_OPERATOR, of(CALCULABLE));
     }};
 
-    public boolean calculate(ExpressionReader reader) {
-        final EvaluationContext evaluationContext = new EvaluationContext();/*message -> {
+    public boolean calculate(ExpressionReader reader, EvaluationContext evaluationContext) {
+        /*message -> {
             throw new CompilationException(message.replace(".", " ") + "at position " + reader.getParsePosition() + "!");
         });*/
         try {
@@ -37,7 +37,6 @@ public class MathExpression extends FiniteStateMachine<
         } catch (CompilationException e) {
             return false;
         }
-        evaluationContext.getResult();
         return true;
     }
 
