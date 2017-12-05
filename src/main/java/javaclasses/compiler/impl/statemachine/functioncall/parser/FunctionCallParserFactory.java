@@ -3,8 +3,8 @@ package javaclasses.compiler.impl.statemachine.functioncall.parser;
 import javaclasses.compiler.impl.ExpressionParser;
 import javaclasses.compiler.impl.statemachine.calculatable.parser.CloseBracketParser;
 import javaclasses.compiler.impl.statemachine.calculatable.parser.OpenBracketParser;
+import javaclasses.compiler.impl.statemachine.executionscope.parser.EndOfExecutionScope;
 import javaclasses.compiler.impl.statemachine.functioncall.FunctionCallState;
-import javaclasses.compiler.impl.statemachine.statement.parser.EndOfStatement;
 import javaclasses.compiler.impl.statemachine.variable.parser.MathExpressionParser;
 
 import java.util.HashMap;
@@ -19,7 +19,7 @@ public class FunctionCallParserFactory {
         put(CLOSE_BRACKET, new CloseBracketParser());
         put(EXPRESSION, new MathExpressionParser());
         put(ARGUMENT_DELIMITER, new ArgumentDelimiterParser());
-        put(FINISH, new EndOfStatement());
+        put(FINISH, new EndOfExecutionScope());
     }};
 
     /**

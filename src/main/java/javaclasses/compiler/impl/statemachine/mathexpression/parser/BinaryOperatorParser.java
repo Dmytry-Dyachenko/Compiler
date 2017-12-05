@@ -5,7 +5,7 @@ import javaclasses.compiler.impl.EvaluationContext;
 import javaclasses.compiler.impl.ExpressionParser;
 import javaclasses.compiler.impl.ExpressionReader;
 
-public class BinaryOperatorParser implements ExpressionParser{
+public class BinaryOperatorParser implements ExpressionParser {
     @Override
     public boolean parse(ExpressionReader reader, EvaluationContext context) throws CompilationException {
         return false;

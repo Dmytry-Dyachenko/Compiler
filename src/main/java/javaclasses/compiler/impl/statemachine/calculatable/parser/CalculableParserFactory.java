@@ -3,7 +3,6 @@ package javaclasses.compiler.impl.statemachine.calculatable.parser;
 import javaclasses.compiler.impl.ExpressionParser;
 import javaclasses.compiler.impl.statemachine.calculatable.CalculableState;
 import javaclasses.compiler.impl.statemachine.executionscope.parser.EndOfExecutionScope;
-import javaclasses.compiler.impl.statemachine.executionscope.parser.StatementParser;
 import javaclasses.compiler.impl.statemachine.statement.parser.FunctionCallParser;
 import javaclasses.compiler.impl.statemachine.variable.parser.MathExpressionParser;
 

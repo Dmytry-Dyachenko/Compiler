@@ -3,7 +3,6 @@ package javaclasses.compiler.impl.statemachine.functioncall.function;
 
 import javaclasses.compiler.impl.Function;
 
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;

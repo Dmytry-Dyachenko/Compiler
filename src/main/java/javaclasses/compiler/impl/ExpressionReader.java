@@ -7,7 +7,7 @@ public class ExpressionReader {
 
 
     public ExpressionReader(String expression) {
-        this.expression = expression.replaceAll(" ","").toLowerCase();
+        this.expression = expression.replaceAll(" ", "").toLowerCase();
     }
 
     /**

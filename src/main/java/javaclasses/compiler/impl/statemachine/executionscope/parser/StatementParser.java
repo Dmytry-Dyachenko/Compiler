@@ -1,9 +1,9 @@
 package javaclasses.compiler.impl.statemachine.executionscope.parser;
 
 import javaclasses.compiler.CompilationException;
+import javaclasses.compiler.impl.EvaluationContext;
 import javaclasses.compiler.impl.ExpressionParser;
 import javaclasses.compiler.impl.ExpressionReader;
-import javaclasses.compiler.impl.EvaluationContext;
 import javaclasses.compiler.impl.statemachine.statement.StatementImpl;
 
 public class StatementParser implements ExpressionParser {

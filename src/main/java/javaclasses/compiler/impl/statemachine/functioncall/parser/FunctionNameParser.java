@@ -16,7 +16,7 @@ public class FunctionNameParser implements ExpressionParser {
 
         for (String name : factory.getFunctionsName()) {
             if (expression.startsWith(name)) {
-                context.pushCommandToContext(new FunctionCallCommand(name));
+                context.pushCommandToContext(new FunctionCallCommand(new FunctionFactory().getFunction(name)));
                 reader.incrementParsePosition(name.length());
                 return true;
             }

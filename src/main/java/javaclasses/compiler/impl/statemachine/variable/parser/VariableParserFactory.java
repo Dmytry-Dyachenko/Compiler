@@ -2,7 +2,6 @@ package javaclasses.compiler.impl.statemachine.variable.parser;
 
 import javaclasses.compiler.impl.ExpressionParser;
 import javaclasses.compiler.impl.statemachine.executionscope.parser.EndOfExecutionScope;
-import javaclasses.compiler.impl.statemachine.statement.parser.EndOfStatement;
 import javaclasses.compiler.impl.statemachine.variable.VariableState;
 
 import java.util.HashMap;

@@ -45,4 +45,10 @@ public class EvaluationContext implements OutputContext {
         }
         return false;
     }
+
+    public List<Double> getFunctionArguments() {
+        List<Double> arguments = new ArrayList<>();
+        arguments.addAll(operandStack);
+        return arguments;
+    }
 }

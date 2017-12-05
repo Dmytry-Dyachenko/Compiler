@@ -6,7 +6,8 @@ import javaclasses.compiler.impl.statemachine.executionscope.ExecutionScopeState
 import java.util.HashMap;
 import java.util.Map;
 
-import static javaclasses.compiler.impl.statemachine.executionscope.ExecutionScopeState.*;
+import static javaclasses.compiler.impl.statemachine.executionscope.ExecutionScopeState.FINISH;
+import static javaclasses.compiler.impl.statemachine.executionscope.ExecutionScopeState.STATEMENT;
 
 
 public class ExecutionScopeParserFactory {

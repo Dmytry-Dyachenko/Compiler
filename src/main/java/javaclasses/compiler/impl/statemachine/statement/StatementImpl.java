@@ -2,9 +2,9 @@ package javaclasses.compiler.impl.statemachine.statement;
 
 import javaclasses.compiler.CompilationException;
 import javaclasses.compiler.FiniteStateMachine;
+import javaclasses.compiler.impl.EvaluationContext;
 import javaclasses.compiler.impl.ExpressionParser;
 import javaclasses.compiler.impl.ExpressionReader;
-import javaclasses.compiler.impl.EvaluationContext;
 import javaclasses.compiler.impl.statemachine.statement.parser.StatementParserFactory;
 
 import java.util.HashMap;
