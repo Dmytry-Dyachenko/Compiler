@@ -2,9 +2,7 @@ package javaclasses.compiler.impl;
 
 import javaclasses.compiler.impl.statemachine.variable.VariableContext;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Optional;
+import java.util.*;
 
 public class EvaluationContext implements OutputContext {
 
@@ -17,21 +15,25 @@ public class EvaluationContext implements OutputContext {
     @Override
     public Optional<Double> getResult() {
         commands.forEach(command -> command.execute(this));
-        return Optional.ofNullable(operandStack.pop());
+        commands.removeAll(commands);
+        if (operandStack.isEmpty()) {
+            return Optional.empty();
+        }
+        return Optional.of(operandStack.pop());
     }
 
     @Override
     public void pushCommandToContext(Command command) {
-        commands.add(command);
+        commands.push(command);
     }
 
     public void pushNumberToOperandStack(double number) {
         operandStack.push(number);
     }
 
-    public void createNewVariableWithName(String variableName) {
+    public void createNewVariableWithNameAndValue(String variableName) {
         if (!isVariableAlreadyExist(variableName)) {
-            variables.add(new VariableContext(variableName));
+            variables.add(new VariableContext(variableName, operandStack.pop()));
         }
     }
 

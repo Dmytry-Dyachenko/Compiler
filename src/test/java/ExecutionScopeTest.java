@@ -7,7 +7,7 @@ public class ExecutionScopeTest {
 
     @Test
     public void testEmptyString() throws CompilationException {
-        executionScope.compile("a=1;b=3");
+        executionScope.compile("a=1;b=3;");
     }
 
 }

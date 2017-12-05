@@ -3,12 +3,13 @@ package javaclasses.compiler.impl.statemachine.functioncall.function;
 import javaclasses.compiler.impl.Function;
 
 import java.util.List;
+import java.util.Optional;
 
 public class PrintFunction implements Function {
     @Override
-    public double execute(List<Double> arguments) {
+    public Optional<Double> execute(List<Double> arguments) {
         System.out.println(arguments.get(0));
-        return 0;
+        return Optional.empty();
     }
 
     @Override

@@ -13,6 +13,6 @@ public class InitVariableCommand extends Command {
 
     @Override
     public void execute(EvaluationContext context) {
-        context.createNewVariableWithName(this.variableName);
+        context.createNewVariableWithNameAndValue(this.variableName);
     }
 }

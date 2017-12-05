@@ -35,6 +35,7 @@ public class StatementImpl extends FiniteStateMachine<
         });*/
         try {
             start(START, reader, evaluationContext);
+            evaluationContext.getResult();
         } catch (CompilationException e) {
             return false;
         }

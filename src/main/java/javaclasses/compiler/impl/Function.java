@@ -1,9 +1,10 @@
 package javaclasses.compiler.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface Function {
-    double execute(List<Double> arguments);
+    Optional<Double> execute(List<Double> arguments);
 
     int getMinCountOfArguments();
 

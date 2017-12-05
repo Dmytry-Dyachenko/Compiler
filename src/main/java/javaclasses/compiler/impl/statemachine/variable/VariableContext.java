@@ -1,19 +1,16 @@
 package javaclasses.compiler.impl.statemachine.variable;
 
 public class VariableContext {
-    private String variableName;
-    private double variableValue;
+    final private String variableName;
+    final private double variableValue;
 
-    public VariableContext(String variableName) {
+    public VariableContext(String variableName, double variableValue) {
         this.variableName = variableName;
+        this.variableValue = variableValue;
     }
 
     public double getVariableValue() {
         return variableValue;
-    }
-
-    public void setVariableValue(double value) {
-        this.variableValue = value;
     }
 
     public String getVariableName() {

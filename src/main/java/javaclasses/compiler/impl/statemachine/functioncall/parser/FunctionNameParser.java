@@ -4,6 +4,7 @@ import javaclasses.compiler.CompilationException;
 import javaclasses.compiler.impl.EvaluationContext;
 import javaclasses.compiler.impl.ExpressionParser;
 import javaclasses.compiler.impl.ExpressionReader;
+import javaclasses.compiler.impl.command.FunctionCallCommand;
 import javaclasses.compiler.impl.statemachine.functioncall.function.FunctionFactory;
 
 public class FunctionNameParser implements ExpressionParser {
@@ -15,7 +16,7 @@ public class FunctionNameParser implements ExpressionParser {
 
         for (String name : factory.getFunctionsName()) {
             if (expression.startsWith(name)) {
-               // context.pushFunctionToContext(name);
+                context.pushCommandToContext(new FunctionCallCommand(name));
                 reader.incrementParsePosition(name.length());
                 return true;
             }
